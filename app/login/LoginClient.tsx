@@ -1,7 +1,6 @@
-// LoginClient.tsx
 "use client";
 
-import { createClient } from "@/utils/supabase/client"; // Assurez-vous que ce chemin est correct
+import { createClient } from "@/utils/supabase/client";
 
 export default function LoginClient() {
   const supabase = createClient();
@@ -18,7 +17,7 @@ export default function LoginClient() {
       window.location.href = "/login?message=Could not authenticate with GitHub";
     } else {
       console.log("GitHub sign-in initiated:", data);
-      // Supabase gère automatiquement la redirection après une connexion réussie
+
     }
   };
 

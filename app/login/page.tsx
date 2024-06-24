@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 import LoginClient from "./LoginClient";
 
 interface LoginProps {
-  searchParams: { message?: string };
+  searchParams: { message: string };
 }
 
 export default function Login({ searchParams }: LoginProps) {
