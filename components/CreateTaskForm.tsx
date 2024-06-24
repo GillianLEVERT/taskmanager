@@ -4,7 +4,11 @@ import { useState } from 'react'
 import { createClient } from '@/utils/supabase/client'
 import { useRouter } from 'next/navigation'
 
-export default function CreateTaskForm() {
+type CreateTaskFormProps = {
+    onTaskCreated: () => void;
+  }
+
+  export default function CreateTaskForm({ onTaskCreated }: CreateTaskFormProps) {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -34,7 +38,7 @@ export default function CreateTaskForm() {
     } else {
       setTitle('')
       setDescription('')
-      router.refresh() // Refresh the current route
+      onTaskCreated() 
     }
 
     setIsLoading(false)

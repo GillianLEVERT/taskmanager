@@ -1,18 +1,18 @@
-import AuthButton from "../components/AuthButton"
-import { createClient } from "@/utils/supabase/server"
-import CreateTaskForm from "@/components/CreateTaskForm"
+import AuthButton from "../components/AuthButton";
+import { createClient } from "@/utils/supabase/server";
+import Link from "next/link";
 
 export default async function Index() {
   const canInitSupabaseClient = (): boolean => {
     try {
-      createClient()
-      return true
+      createClient();
+      return true;
     } catch (e) {
-      return false
+      return false;
     }
-  }
+  };
 
-  const isSupabaseConnected = canInitSupabaseClient()
+  const isSupabaseConnected = canInitSupabaseClient();
 
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
@@ -20,11 +20,10 @@ export default async function Index() {
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
           {isSupabaseConnected && <AuthButton />}
           <div className="mt-96">
-          <CreateTaskForm/>
-
+            <Link href="/task">TASK</Link>
           </div>
         </div>
       </nav>
     </div>
-  )
+  );
 }
