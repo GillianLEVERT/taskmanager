@@ -47,7 +47,7 @@ type CreateTaskFormProps = {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="title" className="block text-sm font-medium text-white">
+        <label htmlFor="title" className="">
           Title
         </label>
         <input
@@ -56,24 +56,24 @@ type CreateTaskFormProps = {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          className="mt-1 block text-black w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          className="text-input"
         />
       </div>
       <div>
-        <label htmlFor="description" className="block text-sm font-medium text-white">
+        <label htmlFor="description" className="">
           Description
         </label>
         <textarea
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="mt-1 block w-full text-black rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          className="text-input"
         />
       </div>
       <button
         type="submit"
         disabled={isLoading}
-        className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        className=""
       >
         {isLoading ? 'Adding...' : 'Add Task'}
       </button>

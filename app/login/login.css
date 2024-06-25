@@ -1,0 +1,44 @@
+.login-button {
+    display: flex;
+    padding: 12px 24px;
+    align-items: center;
+    justify-content: center;
+    background-color: #24292e;
+    color: white; 
+    border: solid 1px white; 
+    border-radius: 6px; 
+    font-size: 16px;
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.3s; 
+    text-decoration: none; 
+
+  }
+  
+  .login-button:hover {
+    background-color: #3b5cc1; /* Couleur différente au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille pour l'effet de survol */
+  }
+
+.back-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 0 0;
+  font-size: large;
+  gap: 40px;
+}
+
+.logo-github {
+    padding: 4px;
+    margin: 0 4px 0 0;
+    height: 28px;
+    width: 28px;
+}

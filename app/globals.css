@@ -2,3 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #123;
+  color: white;
+}
+
+h1 {
+    font-size: x-large;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  padding: 6px;
+  border-radius: 6px;
+  margin: 20px 4px 4px 20px;
+}
+.btn-primary:hover {
+  background-color: #3b5cc1;
+  color: black;
+  transform: scale(1.05);
+  cursor: 
+  pointer;
+}
+
+.btn-secondary {
+  background-color: #cd2e23;
+  padding: 6px;
+  border-radius: 6px;
+  margin: 20px 4px 4px 20px;
+}
+.btn-secondary:hover {
+  background-color: #c1463b;
+  color: black;
+  transform: scale(1.05);
+  cursor: 
+  pointer;
+}
+
+.navbar {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text-input {
+  color: black;
+}

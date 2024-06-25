@@ -34,29 +34,29 @@ export default function TaskItem({ task, onDelete, onUpdate }: TaskItemProps) {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'pending': return 'bg-yellow-600 text-yellow-100'
-      case 'in_progress': return 'bg-blue-600 text-blue-100'
-      case 'completed': return 'bg-green-600 text-green-100'
-      default: return 'bg-gray-600 text-gray-100'
+      case 'pending': return ''
+      case 'in_progress': return ''
+      case 'completed': return ''
+      default: return ''
     }
   }
 
   if (isEditing) {
     return (
-      <div className="border border-gray-600 p-4 rounded shadow-md bg-gray-800">
+      <div className="">
         <input
           type="text"
           value={editedTitle}
           onChange={(e) => setEditedTitle(e.target.value)}
-          className="w-full mb-2 p-2 border rounded bg-gray-700 text-white"
+          className="textinput"
         />
         <textarea
           value={editedDescription}
           onChange={(e) => setEditedDescription(e.target.value)}
-          className="w-full mb-2 p-2 border rounded bg-gray-700 text-white"
+          className=""
         />
-        <button onClick={handleUpdate} className="bg-blue-600 text-white px-4 py-2 rounded mr-2 hover:bg-blue-700">Save</button>
-        <button onClick={() => setIsEditing(false)} className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">Cancel</button>
+        <button onClick={handleUpdate} className="">Save</button>
+        <button onClick={() => setIsEditing(false)} className="">Cancel</button>
       </div>
     )
   }
@@ -76,9 +76,9 @@ export default function TaskItem({ task, onDelete, onUpdate }: TaskItemProps) {
           onChange={handleStatusChange}
           className="mr-2 p-2 border rounded bg-gray-700 text-white"
         >
-          <option value="pending">Pending</option>
-          <option value="in_progress">In Progress</option>
-          <option value="completed">Completed</option>
+          <option value="pending">En attente</option>
+          <option value="in_progress">En cours</option>
+          <option value="completed">Complétée(s)</option>
         </select>
         <button onClick={() => setIsEditing(true)} className="bg-yellow-600 text-white px-4 py-2 rounded mr-2 hover:bg-yellow-700">Edit</button>
         <button onClick={() => onDelete(task.id)} className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Delete</button>
