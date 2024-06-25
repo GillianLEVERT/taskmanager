@@ -39,6 +39,14 @@ h1 {
   pointer;
 }
 
+.btn-edit {
+  background-color: orange;
+}
+
+.btn-delete {
+  background-color: #cd2e23;
+}
+
 .navbar {
   display: flex;
   padding: 10px;
@@ -46,6 +54,3 @@ h1 {
   flex-direction: column;
 }
 
-.text-input {
-  color: black;
-}

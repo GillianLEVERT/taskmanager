@@ -45,10 +45,10 @@ type CreateTaskFormProps = {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="create-task-form">
       <div>
-        <label htmlFor="title" className="">
-          Title
+        <label htmlFor="title">
+          Titre 
         </label>
         <input
           type="text"
@@ -56,26 +56,23 @@ type CreateTaskFormProps = {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          className="text-input"
         />
       </div>
       <div>
-        <label htmlFor="description" className="">
+        <label htmlFor="description">
           Description
         </label>
         <textarea
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="text-input"
         />
       </div>
       <button
         type="submit"
         disabled={isLoading}
-        className=""
       >
-        {isLoading ? 'Adding...' : 'Add Task'}
+        {isLoading ? 'Adding...' : 'Ajouter'}
       </button>
     </form>
   )

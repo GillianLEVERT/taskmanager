@@ -1,27 +1,32 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import CreateTaskForm from '../../components/CreateTaskForm'
-import TaskList from '../../components/TaskList'
+import { useState } from "react";
+import CreateTaskForm from "../../components/CreateTaskForm";
+import TaskList from "../../components/TaskList";
+import './task.css';
 
 export default function TaskPage() {
-  const [refreshTrigger, setRefreshTrigger] = useState(0)
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   const handleTaskCreated = () => {
-    setRefreshTrigger(prev => prev + 1)
-  }
+    setRefreshTrigger((prev) => prev + 1);
+  };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Task Manager</h1>
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">Create a New Task</h2>
+    <section className="task-page">
+      <div className="">
+
+      <h1 className="title">Gestionnaires des tâches</h1>
+
+      <div className="text">
         <CreateTaskForm onTaskCreated={handleTaskCreated} />
       </div>
-      <div>
-        <h2 className="text-xl font-semibold mb-2">Your Tasks</h2>
+      </div>
+
+      <div className="task-container mt-20">
+        <h2 className="title">Vos tâches</h2>
         <TaskList key={refreshTrigger} />
       </div>
-    </div>
-  )
+    </section>
+  );
 }
