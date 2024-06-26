@@ -1,7 +1,7 @@
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
-const defaultUrl = "https://taskmanager-self-gamma.vercel.app" ? "https://taskmanager-self-gamma.vercel.app" : "http://localhost:3000";
+const defaultUrl = "taskmanager-oq1p8x9nc-gillianleverts-projects.vercel.app";
 
 
 export const metadata = {
