@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import "../app/login/login.css";
+import Link from "next/link";
 
 export default function LoginClient() {
   const [email, setEmail] = useState("");
@@ -28,41 +29,31 @@ export default function LoginClient() {
   const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
+  
+    if (!email || !password) {
+      setError('Merci de rentrer un email ou mot de passe valident.');
+      return;
+    }
+  
     try {
       const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
       if (error) throw error;
-      console.log("Connexion réussie, redirection...");
-      // Redirect to the desired page after successful sign-in
-      window.location.href = "/"; // Change this to your desired route
+      console.log("Connexion réussie.");
+      window.location.href = "/"; 
     } catch (error) {
-      setError("Error signing in");
+      setError('Impossible de se connecter, vérifier vos identifiants.');
       console.error(error);
     }
   };
 
-  const handleSignUp = async () => {
-    setError(null);
-    try {
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
-        },
-      });
-      if (error) throw error;
-      setError("Veuillez confirmer votre compte avec votre email");
-    } catch (error) {
-      setError("Erreur");
-      console.error(error);
-    }
-  };
+
 
   return (
     <div className="login-container">
+            {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSignIn} className="login-form">
         <input
           type="email"
@@ -84,9 +75,9 @@ export default function LoginClient() {
           Se connecter
         </button>
       </form>
-      <button onClick={handleSignUp} className="login-button">
+      <Link href="/signup" className="login-button">
         Créer votre compte
-      </button>
+      </Link>
       <button
         type="button"
         onClick={signInWithGithub}
@@ -106,7 +97,7 @@ export default function LoginClient() {
         </svg>
         Connexion avec GitHub
       </button>
-      {error && <p className="error-message">{error}</p>}
+
     </div>
   );
 }

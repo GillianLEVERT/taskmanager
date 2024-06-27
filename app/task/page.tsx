@@ -16,7 +16,7 @@ export default function TaskPage() {
   return (
     <section className="task-page">
       <div className="">
-        <h1 className="title">Gestionnaires des tâches</h1>
+        <h1 className="title">Gestionnaires des tâches.</h1>
 
         <div className="text">
           <CreateTaskForm onTaskCreated={handleTaskCreated} />
@@ -24,7 +24,7 @@ export default function TaskPage() {
       </div>
 
       <div className="task-container mt-20">
-        <h2 className="title">Vos tâches</h2>
+        <h2 className="title">Vos tâches.</h2>
         <TaskList key={refreshTrigger} />
       </div>
       <Link href="/" className="link-task">

@@ -53,7 +53,7 @@ export default function AuthButtonClient() {
 
   return user ? (
     <div className="login-container">
-      Salut {displayName || user.email} et bienvenue
+      Salut {displayName || user.email} et bienvenue.
       <Link href="/task" className="btn-primary">Accéder à vos tâches</Link>
       <button onClick={signOut} className="btn-secondary">
         Se déconnecter
@@ -61,7 +61,7 @@ export default function AuthButtonClient() {
     </div>
   ) : (
     <div className="login-container">
-      Veuillez vous connecter pour voir vos tâches.
+      Veuillez vous connecter pour gérer vos tâches.
       <Link href="/login" className="btn-primary">
         Se connecter
       </Link>
