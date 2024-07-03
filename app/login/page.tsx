@@ -13,7 +13,7 @@ export default function Login({ searchParams }: LoginProps) {
         <LoginClient />
         {searchParams?.message && <p className="">{searchParams.message}</p>}
       </div>
-      <Link href="/" className="back-button">
+      <Link href="/" className="back-button hover:text-blue-500">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="40"

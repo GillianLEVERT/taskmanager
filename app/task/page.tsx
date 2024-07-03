@@ -27,7 +27,7 @@ export default function TaskPage() {
         <h2 className="title">Vos tâches.</h2>
         <TaskList key={refreshTrigger} />
       </div>
-      <Link href="/" className="link-task">
+      <Link href="/" className="link-task hover:text-blue-500">
         Revenir à l'accueil
       </Link>
     </section>
